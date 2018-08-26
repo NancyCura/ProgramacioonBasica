@@ -36,3 +36,34 @@ Salida: 0
 Programa 10
 Sin errores
 Salida: mo
+
+#include "stdafx.h"
+#include < iostream >
+#include < stdlib.h >
+#include < string >
+using namespace std;
+int main()
+{
+  float cal1 = 0, cal2 = 0, cal3 = 0, cal4 = 0, cal5 = 0, Prom = 0;
+  string N;
+
+  cout << "Escribe las 5 calificaciones del alumno:""\n";
+  cout << "Calificacion 1:""\n";
+    cin >> cal1;
+    cout << "Calificacion 2:""\n";
+    cin >> cal2;
+    cout << "Calificacion 3:""\n";
+    cin >> cal3;
+    cout << "Calificacion 4:""\n";
+    cin >> cal4;
+    cout << "Calificacion 5:""\n";
+    cin >> cal5;
+ 
+    Prom = (cal1 + cal2 + cal3 + cal4 + cal5) / 5;
+
+
+    cout << "El promedio final del alumno es" << Prom;
+    return 0;
+ 
+    system("pause");
+}
