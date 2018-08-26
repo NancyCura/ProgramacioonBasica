@@ -1,0 +1,71 @@
+        TAREA 5
+Programa 1
+Error línea 3: En lugar de 'void' debe ser 'int'.
+
+Programa 2
+Sin errores
+Salida: "Hola Mundo"
+
+Programa 3
+Error línea 7: La cadena es más grande que el arreglo.
+Error línea 4: En lugar de 'void' debe ser 'int'.
+
+Programa 4
+Error línea 4: En lugar de 'void' debe ser 'int'
+
+Programa 5
+Sin errores
+Salida: a = 8 b = 24
+
+Programa 6
+Sin errores
+Salida:
+15
+
+Programa 7
+Sin errores
+Salida: a = 6 b = 6
+
+Programa 8
+Sin errores
+Salida: 1
+
+Programa 9
+Sin errores
+Salida: 0 
+
+Programa 10
+Sin errores
+Salida: mo
+
+
+#include "stdafx.h"
+#include < iostream >
+#include < stdlib.h >
+#include < string >
+using namespace std;
+int main()
+{
+  float cal1 = 0, cal2 = 0, cal3 = 0, cal4 = 0, cal5 = 0, Prom = 0;
+  string N;
+
+  cout << "Escribe las 5 calificaciones del alumno:""\n";
+  cout << "Calificacion 1:""\n";
+    cin >> cal1;
+    cout << "Calificacion 2:""\n";
+    cin >> cal2;
+    cout << "Calificacion 3:""\n";
+    cin >> cal3;
+    cout << "Calificacion 4:""\n";
+    cin >> cal4;
+    cout << "Calificacion 5:""\n";
+    cin >> cal5;
+ 
+    Prom = (cal1 + cal2 + cal3 + cal4 + cal5) / 5;
+
+
+    cout << "El promedio final del alumno es" << Prom;
+    return 0;
+ 
+    system("pause");
+}
