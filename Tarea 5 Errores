@@ -1,4 +1,4 @@
-        #TAREA 5
+        TAREA 5
 Programa 1
 Error línea 3: En lugar de 'void' debe ser 'int'.
 
@@ -37,7 +37,8 @@ Salida: 0
 Programa 10
 Sin errores
 Salida: mo
-```cpp
+
+
 #include "stdafx.h"
 #include < iostream >
 #include < stdlib.h >
@@ -68,4 +69,3 @@ int main()
  
     system("pause");
 }
-```
