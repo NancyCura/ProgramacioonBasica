@@ -1,2 +1,38 @@
 Programa 1
-Error línea 3: En lugar de 'void' debe ser 'int'
+Error línea 3: En lugar de 'void' debe ser 'int'.
+
+Programa 2
+Sin errores
+Salida: "Hola Mundo"
+
+Programa 3
+Error línea 7: La cadena es más grande que el arreglo.
+Error línea 4: En lugar de 'void' debe ser 'int'.
+
+Programa 4
+Error línea 4: En lugar de 'void' debe ser 'int'
+
+Programa 5
+Sin errores
+Salida: a = 8 b = 24
+
+Programa 6
+Sin errores
+Salida:
+15
+
+Programa 7
+Sin errores
+Salida: a = 6 b = 6
+
+Programa 8
+Sin errores
+Salida: 1
+
+Programa 9
+Sin errores
+Salida: 0 
+
+Programa 10
+Sin errores
+Salida: mo
