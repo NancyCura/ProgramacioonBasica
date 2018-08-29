@@ -46,8 +46,8 @@ void main(){
   c = round(a); // a) 6
   c = round(b); // b) 8
   
-  c = floor(b); // c) 9
-  c = ceil(b); // d) 8
+  c = floor(b); // c) 8
+  c = ceil(b); // d) 9
 }
 
 7.
