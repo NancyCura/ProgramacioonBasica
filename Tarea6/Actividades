@@ -74,8 +74,8 @@ void main(){
   string s = "Feliz navidad";
   
   int a = 0;
-  int b = 5;
-  int c = 8;
+  int b = 3;
+  int c = 6;
   
   cout << s[a] << s[b] << s[c];
 }
