@@ -18,10 +18,10 @@ Factor | Residuo                 Factor | Residuo
  1          1
  El número es 1110011
  
- 4.
+ 5.
  #include <iostream>
-// a) Expresión requerida para usar funciones iostream
-
+ #include <math.h>
+ using namespace std;
 void main(){
   float arista;
   
