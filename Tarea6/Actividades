@@ -73,9 +73,9 @@ using namespace std;
 void main(){
   string s = "Feliz navidad";
   
-  int a = 1;
-  int b = 4;
-  int c = 7;
+  int a = 0;
+  int b = 5;
+  int c = 8;
   
   cout << s[a] << s[b] << s[c];
 }
