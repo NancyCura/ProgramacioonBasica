@@ -11,7 +11,6 @@ struct persona {
     char apellido[100];
     string correo;
     char tel[15];
-    char mat[8];
     int cal1;
     int cal2;
     int cal3;
@@ -108,7 +107,7 @@ void registrar() {
     cin >> p[c].tel;
 
     cout << "Matrícula: ";
-    cin >> p[c].mat;
+    cin >> p[c].id;
 
     cout << "Calificación 1: ";
     cin >> p[c].cal1;
@@ -125,10 +124,10 @@ void mostrarTodos() {
     system("cls");
     cout << "TODOS LOS REGISTROS" << endl;
     for (int i = 0; i < c; i++) {
-        cout << "Nombre y apellido: " << p[i].nombre << " " << p[i].apellido << endl;
+        cout << "Alumno: " << p[i].nombre << " " << p[i].apellido << endl;
         cout << "Correo electrónico: " << p[i].correo << endl;
         cout << "Teléfono: " << p[i].tel << endl;
-        cout << "Matrícula: " << p[i].mat << endl;
+        cout << "Matrícula: " << p[i].id << endl;
         cout << "Calificaciones: " << p[i].cal1 << " - " << p[i].cal2 << " - " << p[i].cal3 << endl;
     }
 
@@ -139,7 +138,7 @@ void mostrarTodos() {
 void buscar() {
     system("cls");
     cout << "BUSCADOR" << endl << endl;
-    cout << "¿Qué id quiere ver? " << endl;
+    cout << "¿Qué matrícula quiere ver? " << endl;
     cin >> o;
 
     bool encontrado = false;
@@ -147,10 +146,10 @@ void buscar() {
     {
         if (p[i].id == o) {
             cout << "Lo encontré:" << endl;
-            cout << "Nombre y apellido: " << p[i].nombre << " " << p[i].apellido << endl;
+            cout << "Alumno: " << p[i].nombre << " " << p[i].apellido << endl;
             cout << "Correo electrónico: " << p[i].correo << endl;
             cout << "Teléfono: " << p[i].tel << endl;
-            cout << "Matrícula: " << p[i].mat << endl;
+            cout << "Matrícula: " << p[i].id << endl;
             cout << "Calificaciones: " << p[i].cal1 << " - " << p[i].cal2 << " - " << p[i].cal3 << endl;
             encontrado = true;
             break; 
@@ -158,7 +157,7 @@ void buscar() {
     }
 
     if (!encontrado) {
-        cout << "No había registros con ese id." << endl;
+        cout << "No había registros con esa matrícula." << endl;
     }
 
     system("pause > nul");
@@ -180,12 +179,12 @@ void buscarmat() {
     {
 
 
-        if (strcmp(n.c_str(), p[i].mat.c_str()) == 0) { 
+        if (strcmp(n.c_str(), p[i].id.c_str()) == 0) { 
             cout << "Lo encontré: " << endl;
-            cout << "Nombre y apellido: " << p[i].nombre << " " << p[i].apellido << endl;
+            cout << "Alumno: " << p[i].nombre << " " << p[i].apellido << endl;
             cout << "Correo electrónico: " << p[i].correo << endl;
             cout << "Teléfono: " << p[i].tel << endl;
-            cout << "Matrícula: " << p[i].mat << endl;
+            cout << "Matrícula: " << p[i].id << endl;
             cout << "Calificaciones: " << p[i].cal1 << " - " << p[i].cal2 << " - " << p[i].cal3 << endl;
             encontrado = true;
             break; 
@@ -206,20 +205,91 @@ void buscarmat() {
 
 void modificar() {
     cout << "MODIFICAR DATOS" << endl;
+    cin.ignore();
+    cout << "¿Qué matrícula buscas? " << endl;
+    cin >> o;
 
+    int i = 0;
+    while (i < c) {
+        if (p[i].id == o) {
+            cout << "Encontré a: " << endl;
+            cout << "Alumno: " << p[i].nombre << " " << p[i].apellido << endl;
+            cout << "Correo electrónico: " << p[i].correo << endl;
+            cout << "Teléfono: " << p[i].tel << endl;
+            cout << "Matrícula: " << p[i].id << endl;
+            cout << "Calificaciones: " << p[i].cal1 << " - " << p[i].cal2 << " - " << p[i].cal3 << endl;
 
+            cout << "¿Qué deseas modificar?" << endl;
+            cout << "1. Matrícula \n2. Nombre \n3. Apellido \n4. Correo electrónico \n5. Teléfono \n6. Calificaciones \0. Nada" << endl;
+            cin >> o;
 
+            switch (o)
+            {
+            case 1:
+                cout << "Ingresa nueva mátricula: ";
+                cin >> p[i].id;
+                break;
+            case 2:
+                cin.ignore();
+                cout << "Ingresa nuevo nombre: ";
+                getline(cin, p[i].nombre);
+                break;
+            case 3:
+                cout << "Ingresa nuevo apellido: ";
+                cin >> p[i].apellido;
+                break;
+            case 4:
+                cout << "Ingresa nuevo correo electrónico: ";
+                cin >> p[i].correo;
+                break;
+            case 5:
+                cout << "Ingresa nuevo teléfono: ";
+                cin >> p[i].tel;
+                break;
+            case 6:
+                cout << "¿Qué calificación quiere cambiar?";
+                cout << "1. Parcial 1 \n2. Parcial 2 \n3. Parcial 3" << endl;
+                int cambiarcal;
+                cin >> cambiarcal;
+                cout << "Ingrese nueva calificación"<<endl;
+                if (cambiarcal == 1) {
+                    cin >> p[i].cal1;
+                } 
+                else if (cambiarcal == 2) {
+                    cin >> p[i].cal2;
+                }
+                else if (cambiarcal == 3) {
+                    cin >> p[i].cal3;
+                }
+                break;
+            default:
+                break;
+            }
 
+            if (o != 0) {
+                cout << "Registro modificado: " << endl;           
+                cout << "Alumno: " << p[i].nombre << " " << p[i].apellido << endl;
+                cout << "Correo electrónico: " << p[i].correo << endl;
+                cout << "Teléfono: " << p[i].tel << endl;
+                cout << "Matrícula: " << p[i].id << endl;
+                cout << "Calificaciones: " << p[i].cal1 << " - " << p[i].cal2 << " - " << p[i].cal3 << endl;
 
+                cout << "¿Qué deseas modificar?" << endl;
+                cout << "1. Matrícula \n2. Nombre \n3. Apellido \n4. Correo electrónico \n5. Teléfono \n6. Calificaciones \0. Nada" << endl;
+            }
+            else {
+                cout << "No modificaste nada." << endl;
+            }
 
+            break;
+        }
+        i++;
+    }
 
-
-
-
-
-
-
+    system("pause > nul");
+    menu();
 }
+
 
 
 }
