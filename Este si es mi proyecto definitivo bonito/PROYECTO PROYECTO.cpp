@@ -127,7 +127,7 @@ void menu() {
 void registro() {
     system("cls");
     bool conf = false;
-    al[contador].numlista = contador;
+    al[contador].numlista = contador + 1;
 
     //nombre
 
@@ -577,7 +577,7 @@ void mostrartodos() {
     system("cls");
     cout << "Todos los registros" << endl;
     for (int i = 0; i < contador; i++) {
-        cout << al[i + 1].numlista << "." << endl;
+        cout << al[i].numlista << "." << endl;
         cout << "Matrícula: " << al[i].matricula << endl;
         cout << "Nombre completo: " << al[i].nombre << endl;
         cout << "Correo electrónico: " << al[i].correo << endl;
@@ -588,6 +588,7 @@ void mostrartodos() {
         cout << "Parcial 2; " << al[i].cal2 << endl;
         cout << "Parcial 3: " << al[i].cal3 << endl;
         cout << "Promedio final: " << al[i].prom << endl;
+        cout << "----------------------------------------------------------------" << endl;
     }
 
     system("pause");
@@ -642,6 +643,7 @@ void modificar() {
     string n;
     getline(cin, n);
 
+    bool encontrado = false;
     int i = 0;
     while (i < contador) {
         if (strcmp(n.c_str(), al[i].nombre.c_str()) == 0) {
@@ -656,6 +658,7 @@ void modificar() {
             cout << "Parcial 2; " << al[i].cal2 << endl;
             cout << "Parcial 3: " << al[i].cal3 << endl;
             cout << "Promedio final: " << al[i].prom << endl;
+            encontrado = true;
 
             cout << "¿Qué deseas modificar?" << endl;
             cout << "1. Matrícula \n2. Nombre \n3. Correo electrónico \n4. Teléfono \n5. Dirección \n6. Calificaciones \n7.Nada " << endl;
@@ -1132,8 +1135,11 @@ void modificar() {
 
             break;
         }
-            i++;
-       
+        i++;
+
+    }
+    if (!encontrado) {
+        cout << "No se encontraron registros con ese nombre." << endl;
     }
 
     system("pause > nul");
@@ -1175,8 +1181,12 @@ void eliminar() {
     }
     if (i == contador) {
         cout << "No se encontraron registros." << endl;
+
     }
     i++;
+
+    system("pause<nul");
+    system("cls");
     menu();
 }
 
