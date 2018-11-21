@@ -35,7 +35,7 @@ struct alumno {
 alumno al[100];
 
 void main() {
-	locale::global(locale("spanish"));
+    locale::global(locale("spanish"));
     contador = 0;
     opcion = 0;
     system("color FD");
@@ -180,13 +180,13 @@ void registro() {
 
     //matricula
 
-     bool confmat = false;
+    bool confmat = false;
     do
     {
         cin.ignore();
         cout << "Matrícula: " << endl;
         cin >> al[contador].matricula;
-       
+
         int mat = 0;
         int noval = 0;
 
@@ -199,7 +199,7 @@ void registro() {
         if (mat == 7) {
             confmat = true;
         }
-      
+
         if (contador != 0) {
             for (int j = 0; j < contador; j++) {
                 if (al[contador].matricula == al[j].matricula) {
@@ -207,7 +207,7 @@ void registro() {
                     break;
                 }
             }
-        
+
         }
 
 
@@ -228,7 +228,7 @@ void registro() {
 
 
     } while (confmat == false);
-    
+
     //correo
     bool confcorreo = false;
     do
@@ -250,13 +250,13 @@ void registro() {
                 if (al[contador].correo[i] != '.') {
                     confcorreo = false;
                 }
-                if (al[contador].correo[i+1] != 'c') {
+                if (al[contador].correo[i + 1] != 'c') {
                     confcorreo = false;
                 }
-                if (al[contador].correo[i+2] != 'o') {
+                if (al[contador].correo[i + 2] != 'o') {
                     confcorreo = false;
                 }
-                if (al[contador].correo[i+3] != 'm') {
+                if (al[contador].correo[i + 3] != 'm') {
                     confcorreo = false;
                 }
             }
@@ -286,8 +286,8 @@ void registro() {
             system("cls");
         }
 
-    } while (confcorreo==false);
-   
+    } while (confcorreo == false);
+
     //telefono
     bool conftel = false;
     bool conftel2 = false;
@@ -310,7 +310,7 @@ void registro() {
             {
                 conftel = false;
                 break;
-            } 
+            }
 
         }
 
@@ -318,7 +318,7 @@ void registro() {
             conftel = true;
         }
 
-        
+
         if (l > 7 && l < 13) {
             conftel2 = true;
         }
@@ -342,7 +342,7 @@ void registro() {
             }
 
         }
-        
+
         if (confftel == false) {
             cout << "Inserte un teléfono válido. " << endl;
             system("pause > nul");
@@ -359,7 +359,7 @@ void registro() {
 
 
     } while (confftel == false);
-    
+
     //direccion
     bool confdirec = false;
     cout << "Direccion" << endl;
@@ -398,8 +398,8 @@ void registro() {
             system("cls");
         }
     } while (confdirec == false);
-   
-        confdirec = true;
+
+    confdirec = true;
     do
     {
         cout << "Número: ";
@@ -433,8 +433,8 @@ void registro() {
             system("pause > nul ");
             system("cls");
         }
-    } while (confdirec== false);
- 
+    } while (confdirec == false);
+
     confdirec = true;
     do
     {
@@ -577,12 +577,12 @@ void mostrartodos() {
     system("cls");
     cout << "Todos los registros" << endl;
     for (int i = 0; i < contador; i++) {
-        cout << al[i].numlista << "." << endl;
+        cout << al[i + 1].numlista << "." << endl;
         cout << "Matrícula: " << al[i].matricula << endl;
         cout << "Nombre completo: " << al[i].nombre << endl;
         cout << "Correo electrónico: " << al[i].correo << endl;
         cout << "Teléfono: " << al[i].telefono << endl;
-        cout << "Dirección: " << al[i].calle << " " << al[i].numcasa << " "<< al[i].colonia << endl;
+        cout << "Dirección: " << al[i].calle << " " << al[i].numcasa << " " << al[i].colonia << endl;
         cout << "Calificaciones " << endl;
         cout << "Parcial 1: " << al[i].cal1 << endl;
         cout << "Parcial 2; " << al[i].cal2 << endl;
@@ -607,7 +607,7 @@ void buscarNombre() {
     int i = 0;
     while (i < contador)
     {
-        if (strcmp(n.c_str(), al[i].nombre.c_str()) == 0) { 
+        if (strcmp(n.c_str(), al[i].nombre.c_str()) == 0) {
             cout << "Alumno encontrado:" << endl;
             cout << "Matrícula: " << al[i].matricula << endl;
             cout << "Nombre completo: " << al[i].nombre << endl;
@@ -620,7 +620,7 @@ void buscarNombre() {
             cout << "Parcial 3: " << al[i].cal3 << endl;
             cout << "Promedio final: " << al[i].prom << endl;
             encontrado = true;
-            break; 
+            break;
         }
         i++;
     }
@@ -638,6 +638,7 @@ void modificar() {
     cin.ignore();
     system("cls");
     cout << "¿Qué alumno quiere modificar? " << endl;
+    cout << "Nombre:" << endl;
     string n;
     getline(cin, n);
 
@@ -655,7 +656,6 @@ void modificar() {
             cout << "Parcial 2; " << al[i].cal2 << endl;
             cout << "Parcial 3: " << al[i].cal3 << endl;
             cout << "Promedio final: " << al[i].prom << endl;
-
 
             cout << "¿Qué deseas modificar?" << endl;
             cout << "1. Matrícula \n2. Nombre \n3. Correo electrónico \n4. Teléfono \n5. Dirección \n6. Calificaciones \n7.Nada " << endl;
@@ -728,9 +728,10 @@ void modificar() {
 
                 do
                 {
+                    cin.ignore();
                     cout << "Nombre completo: " << endl;
-                    getline(cin, al[contador].nombre);
-                    int c = al[contador].nombre.size();
+                    getline(cin, al[i].nombre);
+                    int c = al[i].nombre.size();
                     int validar = 0;
 
 
@@ -748,16 +749,6 @@ void modificar() {
                         conf = true;
                     }
 
-                    if (contador != 0) {
-                        for (int j = 0; j < contador; j++) {
-                            if (al[i].nombre == al[j].nombre) {
-                                conf = false;
-                                break;
-                            }
-                        }
-
-                    }
-
                     if (conf == false) {
                         cout << "Inserte un nombre válido. " << endl;
                         system("pause > nul");
@@ -766,7 +757,7 @@ void modificar() {
                     }
                     else
                     {
-                        cout << "Nombre confirmado: " << al[contador].nombre << endl;
+                        cout << "Nombre confirmado: " << al[i].nombre << endl;
                         system("pause > nul ");
                         system("cls");
                     }
@@ -776,7 +767,7 @@ void modificar() {
                 break;
 
             case 3:
-                
+
 
                 do
                 {
@@ -837,7 +828,7 @@ void modificar() {
 
                 break;
             case 4:
-                
+
                 do
                 {
                     cout << "Teléfono: " << endl;
@@ -908,7 +899,7 @@ void modificar() {
                 break;
 
             case 5:
-                
+
                 cout << "Nueva direccion" << endl;
                 do
                 {
@@ -1026,7 +1017,7 @@ void modificar() {
 
 
             case 6:
-                
+
                 cout << "¿Qué calificación quiere cambiar?";
                 cout << "1. Parcial 1 \n2. Parcial 2 \n3. Parcial 3" << endl;
                 int cambiarcal;
@@ -1114,37 +1105,37 @@ void modificar() {
 
                 break;
 
-
             default:
                 break;
 
-
-
-                if (opcion != 0) {
-                    cout << "Datos modificado: " << endl;
-                    cout << "Matrícula: " << al[i].matricula << endl;
-                    cout << "Nombre completo: " << al[i].nombre << endl;
-                    cout << "Correo electrónico: " << al[i].correo << endl;
-                    cout << "Teléfono: " << al[i].telefono << endl;
-                    cout << "Dirección: " << al[i].calle << " " << al[i].numcasa << " " << al[i].colonia << endl;
-                    cout << "Calificaciones " << endl;
-                    cout << "Parcial 1: " << al[i].cal1 << endl;
-                    cout << "Parcial 2; " << al[i].cal2 << endl;
-                    cout << "Parcial 3: " << al[i].cal3 << endl;
-                    cout << "Promedio final: " << al[i].prom << endl;
-                    cout << "¿Qué deseas modificar?" << endl;
-
-                    cout << "1. Matrícula \n2. Nombre \n3. Apellido \n4. Altura \n0. Nada" << endl;
-                }
-                else {
-                    cout << "No modificaste nada." << endl;
-                }
-
-                break;
             }
-            i++;
+
+            if (opcion != 0) {
+                cout << "Datos modificado: " << endl;
+                cout << "Matrícula: " << al[i].matricula << endl;
+                cout << "Nombre completo: " << al[i].nombre << endl;
+                cout << "Correo electrónico: " << al[i].correo << endl;
+                cout << "Teléfono: " << al[i].telefono << endl;
+                cout << "Dirección: " << al[i].calle << " " << al[i].numcasa << " " << al[i].colonia << endl;
+                cout << "Calificaciones " << endl;
+                cout << "Parcial 1: " << al[i].cal1 << endl;
+                cout << "Parcial 2; " << al[i].cal2 << endl;
+                cout << "Parcial 3: " << al[i].cal3 << endl;
+                cout << "Promedio final: " << al[i].prom << endl;
+                cout << "¿Qué deseas modificar?" << endl;
+
+                cout << "1. Matrícula \n2. Nombre \n3. Correo electrónico \n4. Teléfono \n5. Dirección \n6. Calificaciones \n7.Nada " << endl;
+            }
+            else {
+                cout << "No modificaste nada." << endl;
+            }
+
+            break;
         }
+            i++;
+       
     }
+
     system("pause > nul");
     menu();
 }
@@ -1152,10 +1143,10 @@ void modificar() {
 void eliminar() {
     cin.ignore();
     system("cls");
-    cout << "¿Qué alumno quiere modificar? " << endl;
+    cout << "¿Qué alumno quiere eliminar? " << endl;
     string n;
     getline(cin, n);
-   
+
     int i = 0;
     while (i < contador) {
         if (strcmp(n.c_str(), al[i].nombre.c_str()) == 0) {
@@ -1186,6 +1177,7 @@ void eliminar() {
         cout << "No se encontraron registros." << endl;
     }
     i++;
+    menu();
 }
 
 void guardar() {
@@ -1196,7 +1188,7 @@ void guardar() {
 
     if (opcion == 1)
     {
- 
+
         ofstream archivo;
 
 
@@ -1214,7 +1206,7 @@ void guardarCSV() {
 
     archivo.open("proyecto.csv");
 
-    for (int i = 0; i < contador; i++) { 
+    for (int i = 0; i < contador; i++) {
         archivo << al[contador].matricula << ",";
         archivo << al[i].nombre << ",";
         archivo << al[i].correo << ",";
