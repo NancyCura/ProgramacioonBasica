@@ -2,6 +2,8 @@
 #include <string>
 #include <fstream>
 #include<stdio.h>
+#include <sstream>
+#include <iostream>
 using namespace std;
 
 int contador = 0;
@@ -1231,4 +1233,6 @@ void guardarCSV() {
     }
 
     archivo.close();
+
+    menu();
 }
