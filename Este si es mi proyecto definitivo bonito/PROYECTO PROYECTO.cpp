@@ -42,12 +42,12 @@ void main() {
     opcion = 0;
     system("color FD");
 
-    ifstream lectura;
+    ifstream archivo;
 
-    lectura.open("Proyecto.txt", ios::binary);
-    if (lectura.is_open()) {
+    archivo.open("Proyecto.txt", ios::binary);
+    if (archivo.is_open()) {
 
-        while (!lectura.eof()) {
+        while (!archivo.eof()) {
             lectura.read((char*)&al, sizeof(al));
         }
     }
@@ -62,7 +62,7 @@ void main() {
         system("pause>nul");
     }
 
-    lectura.close();
+    archivo.close();
 
     for (int i = 0; i < 100; i++)
     {
