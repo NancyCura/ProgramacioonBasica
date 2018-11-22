@@ -1,14 +1,14 @@
 
 
-#UNIVERSIDAD AUT�NOMA DE NUEVO LE�N
-#FACULTAD DE CIENCIAS F�SICO MATEM�TICAS
-## LICENCIADO EN MULTIMEDIA Y ANIMACI�N DIGITAL
+#UNIVERSIDAD AUTÓNOMA DE NUEVO LEÓN
+#FACULTAD DE CIENCIAS FÍSICO MATEMÁTICAS
+## LICENCIADO EN MULTIMEDIA Y ANIMACIÓN DIGITAL
 ### Nancy Marlene Cura Garza
 
 ---
 
 #### Manual de usuario
-Al ejecutar el programa, te saldr�n las opciones que est�n disponibles para realizar.
+Al ejecutar el programa, te saldrán las opciones que están disponibles para realizar.
 1. Manual de usuario
 2. Registrar
 3. Mostrar todos los registros
@@ -17,43 +17,43 @@ Al ejecutar el programa, te saldr�n las opciones que est�n disponibles para 
 7. Eliminar alumno
 8. Salir
  
-Escriba el n�mero de la opci�n que quiera elegir.
+Escriba el número de la opción que quiera elegir.
 
 ##### Registrar
-Aqu� registra los datos del alumno para que sean almacenados.
+Aquí registra los datos del alumno para que sean almacenados.
 Debe llenar todos los datos.
 * Nombre
 * Apellidos
-* Correo electr�nico
-* Tel�fono
-* Matr�cula
+* Correo electrónico
+* Teléfono
+* Matrícula
 * Calificaciones
-* Direcci�n
+* Dirección
 
 ##### Mostrar todos los registros.
-Aqu� se mostrar�n todos los alumnos y sus datos que ha registrado.
+Aquí se mostrarán todos los alumnos y sus datos que ha registrado.
 
 ##### Buscar por nombre 
-Aqu� puede buscar un alumno insertando el nombre y se mostrar�n todos su informaci�n.
+Aquí puede buscar un alumno insertando el nombre y se mostrarán todos su información.
 
 ##### Modificar datos
 Si desea modificar un dato, es necesario insertar el nombre del alumno.
-Se mostrar� los datos que puede modificar.
-1. Matr�cula
+Se mostrará los datos que puede modificar.
+1. Matrícula
 2. Nombre
 3. Apellidos
-4. Correo electr�nico
-5. Tel�fono
+4. Correo electrónico
+5. Teléfono
 6. Calificaciones
-7. Direcci�n
+7. Dirección
 0. Nada
-Escoja la opci�n que desea cambiar e inserte el nuevo dato.
+Escoga la opción que desea cambiar e inserte el nuevo dato.
 
 ##### Eliminar alumno
 Para eliminar a un alumno definitivamente, inserte el nombre.
 1. Eliminar
 2. Cancelar
-Escoja 1 para eliminar al alumno seleccionado o escoga 2 para cancelar.
+Escoga 1 para eliminar al alumno seleccionado o escoga 2 para cancelar.
 
 ##### Salir
-Escoja para salir del programa
+Escoga para salir del programa
